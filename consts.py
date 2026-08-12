@@ -9,7 +9,7 @@ GRID_ROWS = 25
 GRID_COLS = 50
 CELL_SIZE = 20
 WIDTH = GRID_COLS * CELL_SIZE
-HEIGHT = GRID_ROWS * CELL_SIZE + 60
+HEIGHT = GRID_ROWS * CELL_SIZE
 
 # PLAYER SIZE IN GRID UNITS
 PLAYER_ROWS = 4
@@ -44,43 +44,41 @@ def generate_random_dungeon(rows, cols):
             # FIXED BUG 5: border on the bottom row (rows - 1)
             if r == 0 or r == rows - 1 or c == 0 or c == cols - 1:
                 row.append(TILE_EMPTY)
-            elif r >= rows - 5 and c >= cols - 5:
-                row.append(TILE_DIAMOND)
             else:
                 rand_val = random.randint(0, 100)
-                if rand_val >= 95 and rand_val <= 100:
+                if rand_val >= 99 and rand_val <= 100:
                     iswall = True
                 else:
                     iswall = False
 
-                if iswall == True and count_mine >= 50:
-                    rand_val = 0
-                if count_per_row >= 5:
-                    rand_val = 0
+                if iswall == True and count_mine == 20:
+                    iswall = False
+                if count_per_row >= 3:
+                    iswall = False
                 if iswall == True and c >= cols - 3:
-                    rand_val = 0
+                    iswall = False
 
                 if iswall == True:
                     #grid overflow when laying out mines
+                    count_mine += 1
+                    count_per_row += 1
                     mines_to_add = 3
                     for i in range(mines_to_add):
                         row.append(TILE_MINE)
                     c = c + (mines_to_add - 1)
-                    count_mine += 1
-                    count_per_row += 1
                 else:
                     row.append(TILE_EMPTY)
         grid.append(row)
-
     # clear an area of PLAYER_ROWS x PLAYER_COLS starting at (1,1) so player doesn't spawn stuck
     for pr in range(1, 1 + PLAYER_ROWS):
         for pc in range(1, 1 + PLAYER_COLS):
             if pr < rows - 1 and pc < cols - 1:
                 grid[pr][pc] = TILE_EMPTY
-    # put in the end the diamonds
+    # put diamonds in the end
     for r in range(rows - 3, rows):
         for c in range(cols - 4, cols):
             grid[r][c] = TILE_DIAMOND
+
     return grid
 
 
@@ -122,7 +120,7 @@ def move_player(grid, player_r, player_c, dr, dc):
 
     collected_score = 0
     hit_mine = False
-
+    did_hit_diamond = False
     # process items within the new footprint space
     for pr in range(PLAYER_ROWS):
         for pc in range(PLAYER_COLS):
@@ -130,28 +128,28 @@ def move_player(grid, player_r, player_c, dr, dc):
             target_c = new_c + pc
 
             if grid[target_r][target_c] == TILE_DIAMOND:
-                collected_score += 50
+                did_hit_diamond = True
                 grid[target_r][target_c] = TILE_EMPTY
             elif grid[new_r + 3][target_c] == TILE_MINE:
                 hit_mine = True
                 grid[target_r][target_c] = TILE_EMPTY
 
-    return new_r, new_c, collected_score, hit_mine
+    return new_r, new_c, did_hit_diamond, hit_mine
 
 
-def count_remaining_diamonds(grid):
-    count = 0
-    for row in grid:
-        for cell in row:
-            if cell == TILE_DIAMOND:
-                count += 1
-    return count
+# def count_remaining_diamonds(grid):
+#     count = 0
+#     for row in grid:
+#         for cell in row:
+#             if cell == TILE_DIAMOND:
+#                 count += 1
+#     return count
 
 
 def main():
     dungeon = generate_random_dungeon(GRID_ROWS, GRID_COLS)
     player_r, player_c = 1, 1
-    score = 0
+    did_hit_diamond = False
     lives = 1
     level = 1
 
@@ -177,14 +175,14 @@ def main():
                     dc = 1
 
                 if dr != 0 or dc != 0:
-                    player_r, player_c, pts, mine = move_player(dungeon, player_r, player_c, dr, dc)
-                    score += pts
+                    player_r, player_c, did_hit_diamond, mine = move_player(dungeon, player_r, player_c, dr, dc)
                     if mine:
                         lives -= 1
                         print("BOOM! Hit a mine. Lives left:", lives)
 
-        remaining = count_remaining_diamonds(dungeon)
-        if remaining == 0:
+        # remaining = count_remaining_diamonds(dungeon)
+        if did_hit_diamond:
+            did_hit_diamond = False
             level += 1
             print(f"Level {level} Complete! Generating new dungeon...")
             dungeon = generate_random_dungeon(GRID_ROWS, GRID_COLS)
@@ -215,11 +213,6 @@ def main():
         player_height = (CELL_SIZE * PLAYER_ROWS) - 8
         pygame.draw.rect(screen, COLOR_PLAYER, (player_x, player_y, player_width, player_height))
 
-        nearest_pos, dist = find_nearest_diamond(dungeon, player_r, player_c)
-
-        info_str = f"Score: {score} | Lives: {lives} | Level: {level} | Nearest Diamond: {dist:.1f} tiles"
-        txt_surface = font.render(info_str, True, COLOR_TEXT)
-        screen.blit(txt_surface, (10, HEIGHT - 40))
 
         if lives <= 0:
             print("GAME OVER!")

@@ -44,61 +44,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0" />
-      <entry key="S5" value="1.0" />
-      <entry key="S10" value="1.0" />
-      <entry key="S30" value="1.0000000359925718" />
-      <entry key="S60" value="1.000385617517426" />
-      <entry key="M2" value="1.0454979595079066" />
-      <entry key="M5" value="2.2784241747005733" />
-      <entry key="M10" value="7.467766085601375" />
-      <entry key="M15" value="13.638107636156505" />
-      <entry key="M30" value="31.531708153130875" />
-      <entry key="H1" value="71.14931656237486" />
-      <entry key="H2" value="138.2905706642219" />
-      <entry key="H4" value="208.7122083596382" />
-      <entry key="D1" value="305.5330468828513" />
-      <entry key="W1" value="327.21143860111323" />
+      <entry key="MS100" value="1.0000002133906065" />
+      <entry key="MS500" value="1.0474353000357979" />
+      <entry key="S2" value="1.747612948791596" />
+      <entry key="S5" value="2.644351713595329" />
+      <entry key="S10" value="3.204218520879581" />
+      <entry key="S30" value="3.8457057235500387" />
+      <entry key="S60" value="4.981964426095156" />
+      <entry key="M2" value="7.322666040376149" />
+      <entry key="M5" value="12.505984214996065" />
+      <entry key="M10" value="22.686087702922734" />
+      <entry key="M15" value="32.8432704653716" />
+      <entry key="M30" value="58.33507858478072" />
+      <entry key="H1" value="102.42476250729567" />
+      <entry key="H2" value="174.66670152852146" />
+      <entry key="H4" value="254.63675632389536" />
+      <entry key="D1" value="371.2320733537281" />
+      <entry key="W1" value="398.24760311887593" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
       <entry key="MS500" value="0.0" />
-      <entry key="S2" value="0.0" />
-      <entry key="S5" value="0.0" />
-      <entry key="S10" value="1.413463496845E-312" />
-      <entry key="S30" value="1.5726475829219822E-104" />
-      <entry key="S60" value="1.7382542989029237E-52" />
-      <entry key="M2" value="1.8548723213536728E-26" />
-      <entry key="M5" value="7.744474979468724E-11" />
-      <entry key="M10" value="1.2952994193587493E-5" />
-      <entry key="M15" value="7.414121170440143E-4" />
-      <entry key="M30" value="0.04486772011376498" />
-      <entry key="H1" value="0.3611873214306073" />
-      <entry key="H2" value="1.036473329995561" />
-      <entry key="H4" value="1.7613787377233852" />
-      <entry key="D1" value="2.744778501211106" />
-      <entry key="W1" value="2.9621241821754523" />
+      <entry key="S2" value="2.399019933650746E-265" />
+      <entry key="S5" value="1.4191017729265318E-106" />
+      <entry key="S10" value="1.191260581454172E-53" />
+      <entry key="S30" value="2.2838570840907094E-18" />
+      <entry key="S60" value="1.5112435555166844E-9" />
+      <entry key="M2" value="3.887471614708821E-5" />
+      <entry key="M5" value="0.01721340917587299" />
+      <entry key="M10" value="0.1312008005513744" />
+      <entry key="M15" value="0.25832661316945144" />
+      <entry key="M30" value="0.5267013425184331" />
+      <entry key="H1" value="0.9451868090156196" />
+      <entry key="H2" value="1.6756094265486654" />
+      <entry key="H4" value="2.4963077677169783" />
+      <entry key="D1" value="3.680782256317647" />
+      <entry key="W1" value="3.9523433969871293" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.2490658337514041E-16" />
-      <entry key="MS500" value="6.596553147146669E-4" />
-      <entry key="S2" value="0.16026152330788598" />
-      <entry key="S5" value="0.48076374173017555" />
-      <entry key="S10" value="0.6933712870678851" />
-      <entry key="S30" value="0.885092447923202" />
-      <entry key="S60" value="0.9411759716900755" />
-      <entry key="M2" value="1.0152791367342626" />
-      <entry key="M5" value="2.265195950403143" />
-      <entry key="M10" value="7.460246291946921" />
-      <entry key="M15" value="13.633380403886727" />
-      <entry key="M30" value="31.572714182961224" />
-      <entry key="H1" value="71.50620420004486" />
-      <entry key="H2" value="139.32271263642366" />
-      <entry key="H4" value="210.47031716088887" />
-      <entry key="D1" value="308.2770386210624" />
-      <entry key="W1" value="330.1734428668092" />
+      <entry key="MS100" value="1.5996175383371298E-4" />
+      <entry key="MS500" value="0.19177831002671486" />
+      <entry key="S2" value="1.213303315896217" />
+      <entry key="S5" value="2.3087975269278145" />
+      <entry key="S10" value="2.9996420007691658" />
+      <entry key="S30" value="3.765565155216579" />
+      <entry key="S60" value="4.936210675919476" />
+      <entry key="M2" value="7.294482540347077" />
+      <entry key="M5" value="12.508045648731683" />
+      <entry key="M10" value="22.80704600228275" />
+      <entry key="M15" value="33.09308245743817" />
+      <entry key="M30" value="58.85543383601061" />
+      <entry key="H1" value="103.36444001437005" />
+      <entry key="H2" value="176.33734946207585" />
+      <entry key="H4" value="257.1293593539646" />
+      <entry key="D1" value="374.9119489494774" />
+      <entry key="W1" value="402.19980761514574" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -153,7 +153,7 @@
       <workItem from="1786520658258" duration="165000" />
       <workItem from="1786520841386" duration="145000" />
       <workItem from="1786520997975" duration="6406000" />
-      <workItem from="1786527536719" duration="4004000" />
+      <workItem from="1786527536719" duration="6167000" />
     </task>
     <servers />
   </component>
@@ -161,6 +161,6 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/TheFlagGame$consts.coverage" NAME="consts Coverage Results" MODIFIED="1786535180538" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/TheFlagGame$consts.coverage" NAME="consts Coverage Results" MODIFIED="1786537360235" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
