@@ -41,9 +41,9 @@ def generate_random_dungeon(rows, cols):
         row = []
         count_per_row = 0
         for c in range(cols):
-            # FIXED BUG 5: Enforce border on the bottom row (rows - 1)
+            # FIXED BUG 5: border on the bottom row (rows - 1)
             if r == 0 or r == rows - 1 or c == 0 or c == cols - 1:
-                row.append(TILE_WALL)
+                row.append(TILE_EMPTY)
             elif r >= rows - 5 and c >= cols - 5:
                 row.append(TILE_DIAMOND)
             else:
@@ -62,7 +62,7 @@ def generate_random_dungeon(rows, cols):
 
                 if iswall == True:
                     #grid overflow when laying out mines
-                    mines_to_add = min(3, cols - 1 - c)
+                    mines_to_add = 3
                     for i in range(mines_to_add):
                         row.append(TILE_MINE)
                     c = c + (mines_to_add - 1)
@@ -72,12 +72,15 @@ def generate_random_dungeon(rows, cols):
                     row.append(TILE_EMPTY)
         grid.append(row)
 
-    # Clear an area of PLAYER_ROWS x PLAYER_COLS starting at (1,1) so player doesn't spawn stuck
+    # clear an area of PLAYER_ROWS x PLAYER_COLS starting at (1,1) so player doesn't spawn stuck
     for pr in range(1, 1 + PLAYER_ROWS):
         for pc in range(1, 1 + PLAYER_COLS):
             if pr < rows - 1 and pc < cols - 1:
                 grid[pr][pc] = TILE_EMPTY
-
+    # put in the end the diamonds
+    for r in range(rows - 3, rows):
+        for c in range(cols - 4, cols):
+            grid[r][c] = TILE_DIAMOND
     return grid
 
 
@@ -111,8 +114,9 @@ def move_player(grid, player_r, player_c, dr, dc):
         for pc in range(PLAYER_COLS):
             check_r = new_r + pr
             check_c = new_c + pc
-
-            # Out of bounds check or hitting a wall
+            grid_len = len(grid)
+            grid_0_len = len(grid[0])
+            # out of bounds check or hitting a wall
             if check_r >= len(grid) or check_c >= len(grid[0]) or grid[check_r][check_c] == TILE_WALL:
                 return player_r, player_c, 0, False
 
@@ -128,7 +132,7 @@ def move_player(grid, player_r, player_c, dr, dc):
             if grid[target_r][target_c] == TILE_DIAMOND:
                 collected_score += 50
                 grid[target_r][target_c] = TILE_EMPTY
-            elif grid[target_r][target_c] == TILE_MINE:
+            elif grid[new_r + 3][target_c] == TILE_MINE:
                 hit_mine = True
                 grid[target_r][target_c] = TILE_EMPTY
 
@@ -186,7 +190,7 @@ def main():
             dungeon = generate_random_dungeon(GRID_ROWS, GRID_COLS)
             player_r, player_c = 1, 1
 
-        # Draw the grid tiles
+        # draw the grid tiles
         for r in range(GRID_ROWS):
             for c in range(GRID_COLS):
                 rect_x = c * CELL_SIZE
