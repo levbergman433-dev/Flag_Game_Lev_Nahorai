@@ -25,7 +25,8 @@ COLOR_DIAMOND = (0, 195, 255)
 COLOR_MINE = (230, 50, 50)
 COLOR_TEXT = (255, 255, 255)
 # color of the background !!!
-COLOR_PANEL = (34, 139, 34)
+# COLOR_PANEL = (0, 98, 18)
+COLOR_PANEL = (0,0,0)
 
 TILE_EMPTY = 0
 TILE_WALL = 1
@@ -43,15 +44,14 @@ def generate_random_dungeon(rows, cols):
             # FIXED BUG 5: Enforce border on the bottom row (rows - 1)
             if r == 0 or r == rows - 1 or c == 0 or c == cols - 1:
                 row.append(TILE_WALL)
+            elif r >= rows - 5 and c >= cols - 5:
+                row.append(TILE_DIAMOND)
             else:
                 rand_val = random.randint(0, 100)
                 if rand_val >= 95 and rand_val <= 100:
                     iswall = True
-                elif rand_val >= 93 and rand_val < 95:
-                    isdiamond = True
                 else:
                     iswall = False
-                    isdiamond = False
 
                 if iswall == True and count_mine >= 50:
                     rand_val = 0
@@ -60,10 +60,8 @@ def generate_random_dungeon(rows, cols):
                 if iswall == True and c >= cols - 3:
                     rand_val = 0
 
-                if isdiamond == True:
-                    row.append(TILE_DIAMOND)
-                elif iswall == True:
-                    # Care for grid overflow when laying out mines
+                if iswall == True:
+                    #grid overflow when laying out mines
                     mines_to_add = min(3, cols - 1 - c)
                     for i in range(mines_to_add):
                         row.append(TILE_MINE)
@@ -195,7 +193,8 @@ def main():
                 rect_y = r * CELL_SIZE
 
                 tile_type = dungeon[r][c]
-                color = COLOR_PANEL
+                # color = (COLOR_PANEL)
+                color = ((0,0,0))
                 if tile_type == TILE_WALL:
                     color = COLOR_WALL
                 elif tile_type == TILE_DIAMOND:
@@ -203,7 +202,7 @@ def main():
                 elif tile_type == TILE_MINE:
                     color = COLOR_MINE
 
-                pygame.draw.rect(screen, color, (rect_x, rect_y, CELL_SIZE, CELL_SIZE))
+                pygame.draw.rect(screen, color, (rect_x, rect_y, CELL_SIZE - 2, CELL_SIZE - 2))
 
         # DRAW LARGE PLAYER: Scale width by PLAYER_COLS (2) and height by PLAYER_ROWS (6)
         player_x = player_c * CELL_SIZE + 4
