@@ -24,7 +24,7 @@ COLOR_PLAYER = (255, 215, 0)
 COLOR_DIAMOND = (0, 195, 255)
 COLOR_MINE = (230, 50, 50)
 COLOR_TEXT = (255, 255, 255)
-# color of the background !!!
+# color of the background !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 # COLOR_PANEL = (0, 98, 18)
 COLOR_PANEL = (0,0,0)
 
@@ -35,46 +35,61 @@ TILE_MINE = 3
 
 
 def generate_random_dungeon(rows, cols):
+    # create a blank grid first using simple for loops
     grid = []
-    count_mine = 0
     for r in range(rows):
         row = []
-        count_per_row = 0
         for c in range(cols):
-            # FIXED BUG 5: border on the bottom row (rows - 1)
+            row.append(TILE_EMPTY)
+        grid.append(row)
+
+    count_mine = 0
+    mines_to_add = 3
+
+    # run your random generation logic safely by modifying grid[r][c]
+    for r in range(rows):
+        count_per_row = 0
+        c = 0
+        while c < cols:
+            # enforce emptiness on sides
             if r == 0 or r == rows - 1 or c == 0 or c == cols - 1:
-                row.append(TILE_EMPTY)
+                grid[r][c] = TILE_EMPTY
+                c += 1
             else:
-                rand_val = random.randint(0, 100)
+                rand_val = random.randint(30, 100)
+                iswall = False
                 if rand_val >= 99 and rand_val <= 100:
                     iswall = True
-                else:
-                    iswall = False
 
-                if iswall == True and count_mine == 20:
+                if iswall and count_mine >= 20:
                     iswall = False
                 if count_per_row >= 3:
                     iswall = False
-                if iswall == True and c >= cols - 3:
+                if iswall and c >= cols - 4:
                     iswall = False
-
                 if iswall == True:
-                    #grid overflow when laying out mines
+                    for i in range(mines_to_add):
+                        if c + i < cols - 1:
+                            if grid[r - 1][c + i] == TILE_MINE:
+                                iswall = False
+                if iswall:
                     count_mine += 1
                     count_per_row += 1
-                    mines_to_add = 3
                     for i in range(mines_to_add):
-                        row.append(TILE_MINE)
-                    c = c + (mines_to_add - 1)
+                        if c + i < cols - 1:
+                            grid[r][c + i] = TILE_MINE
+                    c = c + mines_to_add
                 else:
-                    row.append(TILE_EMPTY)
-        grid.append(row)
-    # clear an area of PLAYER_ROWS x PLAYER_COLS starting at (1,1) so player doesn't spawn stuck
+                    grid[r][c] = TILE_EMPTY
+                    c += 1
+
+    # clear player spawn area
     for pr in range(1, 1 + PLAYER_ROWS):
         for pc in range(1, 1 + PLAYER_COLS):
             if pr < rows - 1 and pc < cols - 1:
                 grid[pr][pc] = TILE_EMPTY
-    # put diamonds in the end
+
+    # 3x4 diamond block cleanly at the end
     for r in range(rows - 3, rows):
         for c in range(cols - 4, cols):
             grid[r][c] = TILE_DIAMOND
@@ -116,6 +131,8 @@ def move_player(grid, player_r, player_c, dr, dc):
             grid_0_len = len(grid[0])
             # out of bounds check or hitting a wall
             if check_r >= len(grid) or check_c >= len(grid[0]) or grid[check_r][check_c] == TILE_WALL:
+                return player_r, player_c, 0, False
+            if check_r < 0 or check_c < 0:
                 return player_r, player_c, 0, False
 
     collected_score = 0
