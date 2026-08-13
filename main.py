@@ -66,7 +66,7 @@ def main():
         if start_bool:
             Screen.draw_welcome_message()
             pygame.display.flip()
-            pygame.time.wait(3000)
+            pygame.time.wait(1000)
             start_bool = False
         clock.tick(30)
 
