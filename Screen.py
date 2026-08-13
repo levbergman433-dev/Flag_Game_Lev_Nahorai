@@ -107,7 +107,10 @@ def draw_image(image_name, rect_x, rect_y, size_x, size_y):
 
     # display finally the circle on the main screen!!!
     game_consts.game_screen.blit(avatar_circle, (blit_x, blit_y))
-
+# draw welcome
+def draw_welcome_message():
+    draw_message('Welcome to The Flag game.\n Have Fun!', 20,
+                 (255, 255, 255), (20, 20))
 # draw lose
 def draw_lose_message():
     draw_message('You lost sonion', 200,

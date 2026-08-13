@@ -11,11 +11,11 @@ import soldier
 
 
 def main():
+    start_bool = True
     dungeon = game_field.generate_random_dungeon_grass(GRID_ROWS, GRID_COLS)
     dungeon_mines = game_field.generate_random_dungeon_mines(GRID_ROWS, GRID_COLS)
     state = {'state' : game_consts.RUNNING_STATE}
     player_r, player_c = 1, 1
-    font = pygame.font.SysFont("Arial", 20)
     while state['state'] == game_consts.RUNNING_STATE:
         game_screen.fill(COLOR_PANEL)
         # draw grass
@@ -62,8 +62,12 @@ def main():
 
         # draw player
         Screen.draw_player(player_c, player_r)
-
         pygame.display.flip()
+        if start_bool:
+            Screen.draw_welcome_message()
+            pygame.display.flip()
+            pygame.time.wait(3000)
+            start_bool = False
         clock.tick(30)
 
     pygame.quit()
