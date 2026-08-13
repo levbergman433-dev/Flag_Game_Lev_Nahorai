@@ -11,17 +11,18 @@ import soldier
 
 
 def main():
-    dungeon = game_field.generate_random_dungeon(GRID_ROWS, GRID_COLS)
+    dungeon = game_field.generate_random_dungeon_grass(GRID_ROWS, GRID_COLS)
+    dungeon_mines = game_field.generate_random_dungeon_mines(GRID_ROWS, GRID_COLS)
     state = {'state' : game_consts.RUNNING_STATE}
     player_r, player_c = 1, 1
     font = pygame.font.SysFont("Arial", 20)
     while state['state'] == game_consts.RUNNING_STATE:
         game_screen.fill(COLOR_PANEL)
-
+        # draw grass
+        Screen.draw_grass(dungeon)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 state['state'] = game_consts.LOST_STATE
-
             if event.type == pygame.KEYDOWN:
                 dr, dc = 0, 0
                 if event.key == pygame.K_UP:
@@ -32,25 +33,32 @@ def main():
                     dc = -1
                 elif event.key == pygame.K_RIGHT:
                     dc = 1
-                elif event.key == pygame.K_SPACE:
+                elif event.key == pygame.K_RETURN:
+                    game_screen.fill(COLOR_PANEL)
                     Screen.draw_grid_lines(dungeon)
+                    Screen.draw_mines(dungeon_mines)
+                    Screen.draw_night_player(player_c, player_r)
+                    pygame.display.flip()
+                    pygame.time.wait(1000)
 
 
                 if dr != 0 or dc != 0:
-                    player_r, player_c, new_state = soldier.move_player(dungeon, player_r, player_c, dr, dc)
+                    player_r, player_c, new_state = soldier.move_player(dungeon_mines, player_r, player_c, dr, dc)
                     state['state'] = new_state
                     if state['state'] == game_consts.LOST_STATE:
-                        print("you are dead sonion")
+                        game_screen.fill((0, 0, 0))
+                        Screen.draw_lose_message()
+                        pygame.display.flip()
+                        pygame.time.wait(3000)
 
         if state['state'] == game_consts.WIN_STATE:
-            dungeon = game_field.generate_random_dungeon(GRID_ROWS, GRID_COLS)
-            player_r, player_c = 1, 1
+            game_screen.fill((0,0,0))
+            Screen.draw_win_message()
+            pygame.display.flip()
+            pygame.time.wait(3000)
 
-        # draw mines
-        Screen.draw_mines(dungeon)
         # draw flag
         Screen.draw_flag()
-
 
         # draw player
         Screen.draw_player(player_c, player_r)

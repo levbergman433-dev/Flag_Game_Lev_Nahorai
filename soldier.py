@@ -19,10 +19,8 @@ def move_player(grid, player_r, player_c, dr, dc):
             grid_0_len = len(grid[0])
             # out of bounds check or hitting a wall
             if check_r >= len(grid) or check_c >= len(grid[0]):
-                new_state = game_consts.LOST_STATE
                 return player_r, player_c, new_state
             if check_r < 0 or check_c < 0:
-                new_state = game_consts.LOST_STATE
                 return player_r, player_c, new_state
 
     # process items within the new footprint space

@@ -2,7 +2,7 @@
 import pygame
 import game_consts
 from game_consts import *
-
+import time
 
 # draw grid lines
 def draw_grid_lines(dungeon):
@@ -17,7 +17,7 @@ def draw_grid_lines(dungeon):
             if tile_type == game_consts.TILE_EMPTY:
                 color = game_consts.COLOR_EMPTY
 
-            pygame.draw.rect(game_screen, color, (rect_x, rect_y, game_consts.CELL_SIZE - 1.5, game_consts.CELL_SIZE - 1.5))
+            pygame.draw.rect(game_consts.game_screen, color, (rect_x, rect_y, game_consts.CELL_SIZE - 1, game_consts.CELL_SIZE - 1))
 # draw mines
 def draw_mines(dungeon):
     # draw mines
@@ -32,13 +32,26 @@ def draw_mines(dungeon):
                 c += 3
             else:
                 c += 1
-
+# draw grass
+def draw_grass(dungeon):
+    # draw grass
+    for r in range(game_consts.GRID_ROWS):
+        c = 0
+        while c < game_consts.GRID_COLS:
+            tile_type = dungeon[r][c]
+            if tile_type == game_consts.TILE_GRASS:
+                rect_x = (c + 1) * game_consts.CELL_SIZE
+                rect_y = r * game_consts.CELL_SIZE
+                draw_image('grass', rect_x, rect_y, 3 * game_consts.CELL_SIZE, 2 * game_consts.CELL_SIZE)
+                c += 3
+            else:
+                c += 1
 # draw flag
 def draw_flag():
     rect_x = (game_consts.GRID_COLS - 3) * game_consts.CELL_SIZE
     rect_y = (game_consts.GRID_ROWS - 3) * game_consts.CELL_SIZE
     draw_image('flag', rect_x, rect_y, 3 * game_consts.CELL_SIZE, 3 * game_consts.CELL_SIZE)
-
+# draw player
 def draw_player(player_c, player_r):
     # draw large player: scale width by PLAYER_COLS (2) and height by PLAYER_ROWS (6)
     player_x = player_c * game_consts.CELL_SIZE + 4
@@ -47,6 +60,19 @@ def draw_player(player_c, player_r):
     player_height = (game_consts.CELL_SIZE * 4) - 8
     # pygame.draw.rect(screen, COLOR_PLAYER, (player_x, player_y, player_width, player_height))
     draw_image('soldier', player_x, player_y, player_width, player_height)
+
+
+def draw_night_player(player_c, player_r):
+    # draw large player: scale width by PLAYER_COLS (2) and height by PLAYER_ROWS (6)
+    player_x = player_c * game_consts.CELL_SIZE + 4
+    player_y = player_r * game_consts.CELL_SIZE + 4
+    player_width = (game_consts.CELL_SIZE * 3) - 8
+    player_height = (game_consts.CELL_SIZE * 4) - 8
+    # pygame.draw.rect(screen, COLOR_PLAYER, (player_x, player_y, player_width, player_height))
+    draw_image('soldier_night', player_x, player_y, player_width, player_height)
+
+
+
 
 def get_image(image_path, radius_x, radius_y):
     # load the actual image
@@ -64,8 +90,6 @@ def get_image(image_path, radius_x, radius_y):
     return target_surf
 
 IMAGES_LOADED = {}
-
-
 def draw_image(image_name, rect_x, rect_y, size_x, size_y):
     img = f'Images/{image_name}.png'
 
@@ -83,3 +107,16 @@ def draw_image(image_name, rect_x, rect_y, size_x, size_y):
 
     # display finally the circle on the main screen!!!
     game_consts.game_screen.blit(avatar_circle, (blit_x, blit_y))
+
+# draw lose
+def draw_lose_message():
+    draw_message('You lost sonion', 200,
+                 (255, 0, 0), (100, game_consts.HEIGHT / 2 - 200))
+# draw win
+def draw_win_message():
+    draw_message('You won sonion', 200,
+                 (255, 255, 255), (100, game_consts.HEIGHT / 2 - 200))
+def draw_message(message, font_size, color, location):
+    font = pygame.font.SysFont("Arial", font_size)
+    text_img = font.render(message, True, color)
+    game_consts.game_screen.blit(text_img, location)
