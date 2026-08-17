@@ -26,7 +26,7 @@ def generate_random_dungeon_mines(rows, cols):
                 grid[r][c] = game_consts.TILE_EMPTY
                 c += 1
             else:
-                rand_val = random.randint(30, 100)
+                rand_val = random.randint(5, 100)
                 iswall = False
                 if rand_val >= 99 and rand_val <= 100:
                     iswall = True
@@ -87,7 +87,7 @@ def generate_random_dungeon_grass(rows, cols):
                 grid[r][c] = game_consts.TILE_EMPTY
                 c += 1
             else:
-                rand_val = random.randint(30, 100)
+                rand_val = random.randint(5, 100)
                 iswall = False
                 if rand_val >= 99 and rand_val <= 100:
                     iswall = True

@@ -38,7 +38,7 @@ def main():
                 state['state'] = game_consts.LOST_STATE
             # אם נלחץ מספר (1 עד 9) – רושמים את הזמן הנוכחי של הלחיצה כדי למדוד כמה זמן היא נמשכת.
             elif event.type == pygame.KEYDOWN:
-                # Check if a key is pressed
+                # לבדוק אם נלחץ מקש
                 if event.key in NUMBER_KEYS:
                     key_press_times[event.key] = pygame.time.get_ticks()
                 # כיוון תנועה לפי החצים במקלדת (dr = שינוי שורה, dc = שינוי עמודה).
@@ -68,17 +68,18 @@ def main():
                         Screen.draw_lose_message()
                         pygame.display.flip()
                         pygame.time.wait(3000)
-            #Key release - check if it's a number and calculate time
+            # בדוק אם זה מספר ולחשב את הזמן
             elif event.type == pygame.KEYUP:
                 if event.key in NUMBER_KEYS and event.key in key_press_times:
                     duration_ms = pygame.time.get_ticks() - key_press_times.pop(event.key)
                     duration_sec = duration_ms / 1000.0
                     slot_number = NUMBER_KEYS[event.key]
-                    # Short press (one second or less) = Save
+                    # short press (1 second or less) = save
                     if duration_sec <= 1.0:
-                        database.save_game_state(slot_number,player_r, player_c,dungeon_mines,dungeon)
+                        database.save_game_state(slot_number, (player_r, player_c), dungeon_mines, dungeon
+                        )
                         print(f"Saved game to slot {slot_number}")
-                    # Long press (more than one second) = Charging
+                    # long press (more than 1 second) = load
                     else:
                         loaded = database.load_game_state(slot_number)
                         if loaded:
@@ -97,7 +98,7 @@ def main():
         if start_bool:
             Screen.draw_welcome_message()
             pygame.display.flip()
-            pygame.time.wait(3000)
+            pygame.time.wait(1000)
             start_bool = False
         clock.tick(30)
     pygame.quit()

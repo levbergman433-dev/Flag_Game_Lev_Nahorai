@@ -46,4 +46,7 @@ LOST_STATE = 2
 WIN_STATE = 3
 
 
+# database consts
+
+
 
