@@ -69,7 +69,24 @@ def main():
                         pygame.display.flip()
                         pygame.time.wait(3000)
             # בדוק אם זה מספר ולחשב את הזמן
-
+            elif event.type == pygame.KEYUP:
+                if event.key in NUMBER_KEYS and event.key in key_press_times:
+                    duration_ms = pygame.time.get_ticks() - key_press_times.pop(event.key)
+                    duration_sec = duration_ms / 1000.0
+                    slot_number = NUMBER_KEYS[event.key]
+                    # short press (1 second or less) = save
+                    if duration_sec <= 1.0:
+                        database.save_game_state(slot_number, (player_r, player_c), dungeon_mines, dungeon
+                        )
+                        print(f"Saved game to slot {slot_number}")
+                    # long press (more than 1 second) = load
+                    else:
+                        loaded = database.load_game_state(slot_number)
+                        if loaded:
+                            player_r, player_c = loaded["soldier_pos"]
+                            dungeon_mines = loaded["mines"]
+                            dungeon = loaded["grasses"]
+                            print(f"Loaded game from slot {slot_number}")
         if state['state'] == game_consts.WIN_STATE:
             game_screen.fill((0, 0, 0))
             Screen.draw_win_message()
