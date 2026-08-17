@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eab528c0-e292-42be-9b7e-0c298c6e49a8" name="Changes" comment="" />
+    <list default="true" id="eab528c0-e292-42be-9b7e-0c298c6e49a8" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game_consts.py" beforeDir="false" afterPath="$PROJECT_DIR$/game_consts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/soldier.py" beforeDir="false" afterPath="$PROJECT_DIR$/soldier.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,61 +46,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.3609823133333414" />
-      <entry key="MS500" value="1.900276028488737" />
-      <entry key="S2" value="4.528921810120456" />
-      <entry key="S5" value="9.340094209411099" />
-      <entry key="S10" value="13.480565444298026" />
-      <entry key="S30" value="17.961375414747035" />
-      <entry key="S60" value="19.410843459836556" />
-      <entry key="M2" value="20.812302419458838" />
-      <entry key="M5" value="28.818488133095194" />
-      <entry key="M10" value="40.64512547557682" />
-      <entry key="M15" value="48.044077628589704" />
-      <entry key="M30" value="64.22537002317557" />
-      <entry key="H1" value="103.84901198206565" />
-      <entry key="H2" value="182.087502661276" />
-      <entry key="H4" value="298.5337817061067" />
-      <entry key="D1" value="759.1497325251257" />
-      <entry key="W1" value="985.6827963345819" />
+      <entry key="MS100" value="1.1538930516681145" />
+      <entry key="MS500" value="1.6877709090698718" />
+      <entry key="S2" value="1.9106698335919785" />
+      <entry key="S5" value="1.9632618940201478" />
+      <entry key="S10" value="1.9814590638629568" />
+      <entry key="S30" value="1.9954859015532347" />
+      <entry key="S60" value="2.2298144322998166" />
+      <entry key="M2" value="4.826548781710208" />
+      <entry key="M5" value="17.49663777980889" />
+      <entry key="M10" value="36.57239541776804" />
+      <entry key="M15" value="50.0754526576466" />
+      <entry key="M30" value="75.93504224501307" />
+      <entry key="H1" value="120.8584105834578" />
+      <entry key="H2" value="202.17311549309878" />
+      <entry key="H4" value="321.4658261371797" />
+      <entry key="D1" value="788.1110549178733" />
+      <entry key="W1" value="1017.9399462259755" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="0.0" />
-      <entry key="S2" value="1.8147132438296747E-118" />
-      <entry key="S5" value="8.248355132073672E-48" />
-      <entry key="S10" value="3.3205381808792265E-24" />
-      <entry key="S30" value="2.2032302394678574E-8" />
-      <entry key="S60" value="2.077441823413537E-4" />
-      <entry key="M2" value="0.020329631046291857" />
-      <entry key="M5" value="0.3188550756825116" />
-      <entry key="M10" value="0.7996727696442901" />
-      <entry key="M15" value="1.1020102802765612" />
-      <entry key="M30" value="1.8287366988548686" />
-      <entry key="H1" value="3.745072491190641" />
-      <entry key="H2" value="7.228046196523496" />
-      <entry key="H4" value="11.597498666228022" />
-      <entry key="D1" value="23.324554352899764" />
-      <entry key="W1" value="28.050585800247504" />
+      <entry key="MS500" value="1.9178126937234831E-230" />
+      <entry key="S2" value="3.721358817649212E-58" />
+      <entry key="S5" value="1.0672855237998367E-23" />
+      <entry key="S10" value="3.2669336139564213E-12" />
+      <entry key="S30" value="1.4838161824607863E-4" />
+      <entry key="S60" value="0.012181336017128092" />
+      <entry key="M2" value="0.11088985273202762" />
+      <entry key="M5" value="0.48778653637780567" />
+      <entry key="M10" value="1.0278720738912965" />
+      <entry key="M15" value="1.4215526395619973" />
+      <entry key="M30" value="2.295827945229508" />
+      <entry key="H1" value="4.243743679801649" />
+      <entry key="H2" value="7.763868183077896" />
+      <entry key="H4" value="12.230602119972433" />
+      <entry key="D1" value="24.203124336734803" />
+      <entry key="W1" value="29.029767290987916" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.3237661799645009" />
-      <entry key="MS500" value="1.888889965971111" />
-      <entry key="S2" value="4.5174371099116275" />
-      <entry key="S5" value="9.33013993956074" />
-      <entry key="S10" value="13.473308974923198" />
-      <entry key="S30" value="17.9581184055658" />
-      <entry key="S60" value="19.409248028303786" />
-      <entry key="M2" value="20.829862821366625" />
-      <entry key="M5" value="29.125290276363668" />
-      <entry key="M10" value="41.42985816563086" />
-      <entry key="M15" value="49.13231192644975" />
-      <entry key="M30" value="66.04265106786097" />
-      <entry key="H1" value="107.58272029883163" />
-      <entry key="H2" value="189.30464915428786" />
-      <entry key="H4" value="310.1224368453226" />
-      <entry key="D1" value="782.4711486924577" />
-      <entry key="W1" value="1013.7328307291068" />
+      <entry key="MS100" value="1.003596836102794" />
+      <entry key="MS500" value="1.6406919866073353" />
+      <entry key="S2" value="1.897158493297968" />
+      <entry key="S5" value="1.9576929578112119" />
+      <entry key="S10" value="1.9786461484940172" />
+      <entry key="S30" value="1.994660932193116" />
+      <entry key="S60" value="2.2401690249619035" />
+      <entry key="M2" value="4.930559622193891" />
+      <entry key="M5" value="17.971052936995363" />
+      <entry key="M10" value="37.584551337698755" />
+      <entry key="M15" value="51.48184086281245" />
+      <entry key="M30" value="78.21792217979669" />
+      <entry key="H1" value="125.0899296278761" />
+      <entry key="H2" value="209.92559772301584" />
+      <entry key="H4" value="333.68727211678333" />
+      <entry key="D1" value="812.3109587857322" />
+      <entry key="W1" value="1046.9691484374678" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -112,6 +117,7 @@
     &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;Python.consts.executor&quot;: &quot;Run&quot;,
+    &quot;Python.database.executor&quot;: &quot;Run&quot;,
     &quot;Python.main.executor&quot;: &quot;Run&quot;,
     &quot;Python.soldier.executor&quot;: &quot;Debug&quot;,
     &quot;Python.text.executor&quot;: &quot;Run&quot;,
@@ -123,7 +129,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
     &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;lev-work&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/tvmai/PycharmProjects/TheFlagGame/Images&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -133,7 +139,7 @@
     &quot;node.js.selected.package.jshint&quot;: &quot;&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
     &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -143,10 +149,125 @@
       <recent name="C:\Users\tvmai\PycharmProjects\TheFlagGame\Images" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="day-2" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <module name="day-2" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <option name="RUN_TOOL" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docs" factoryName="Docutils task">
+      <module name="day-2" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <option name="RUN_TOOL" value="" />
+      <option name="docutils_input_file" value="" />
+      <option name="docutils_output_file" value="" />
+      <option name="docutils_params" value="" />
+      <option name="docutils_task" value="" />
+      <option name="docutils_open_in_browser" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docs" factoryName="Sphinx task">
+      <module name="day-2" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <option name="RUN_TOOL" value="" />
+      <option name="docutils_input_file" value="" />
+      <option name="docutils_output_file" value="" />
+      <option name="docutils_params" value="" />
+      <option name="docutils_task" value="" />
+      <option name="docutils_open_in_browser" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Autodetect">
+      <module name="day-2" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <option name="RUN_TOOL" value="" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <module name="day-2" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-PY-261.26222.68" />
         <option value="bundled-python-sdk-50341a9f1f9c-c2ffad84badb-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-261.26222.68" />
       </set>
     </attachedChunks>
@@ -190,10 +311,8 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/TheFlagGame$text.coverage" NAME="text Coverage Results" MODIFIED="1786603317867" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/TheFlagGame$Screen.coverage" NAME="Screen Coverage Results" MODIFIED="1786619095897" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/TheFlagGame$consts.coverage" NAME="consts Coverage Results" MODIFIED="1786604788442" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/TheFlagGame$soldier.coverage" NAME="soldier Coverage Results" MODIFIED="1786609100599" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/TheFlagGame$game_field.coverage" NAME="game_field Coverage Results" MODIFIED="1786624743703" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/TheFlagGame$main.coverage" NAME="main Coverage Results" MODIFIED="1786947765148" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/TheFlagGame$main.coverage" NAME="main Coverage Results" MODIFIED="1786617968293" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
