@@ -38,7 +38,7 @@ def main():
                 state['state'] = game_consts.LOST_STATE
             # אם נלחץ מספר (1 עד 9) – רושמים את הזמן הנוכחי של הלחיצה כדי למדוד כמה זמן היא נמשכת.
             elif event.type == pygame.KEYDOWN:
-                # Check if a key is pressed
+                # לבדוק אם נלחץ מקש
                 if event.key in NUMBER_KEYS:
                     key_press_times[event.key] = pygame.time.get_ticks()
                 # כיוון תנועה לפי החצים במקלדת (dr = שינוי שורה, dc = שינוי עמודה).
@@ -68,29 +68,8 @@ def main():
                         Screen.draw_lose_message()
                         pygame.display.flip()
                         pygame.time.wait(3000)
-            #Key release - check if it's a number and calculate time
-            elif event.type == pygame.KEYUP:
-                if event.key in NUMBER_KEYS and event.key in key_press_times:
-                    duration_ms = pygame.time.get_ticks() - key_press_times.pop(event.key)
-                    duration_sec = duration_ms / 1000.0
-                    slot_number = NUMBER_KEYS[event.key]
-                    # Short press (one second or less) = Save
-                    if duration_sec <= 1.0:
-                        database.save_game_state(
-                            key=slot_number,
-                            soldier_pos=(player_r, player_c),
-                            mines=dungeon_mines,
-                            grasses=dungeon
-                        )
-                        print(f"Saved game to slot {slot_number}")
-                    # Long press (more than one second) = Charging
-                    else:
-                        loaded = database.load_game_state(slot_number)
-                        if loaded:
-                            player_r, player_c = loaded["soldier_pos"]
-                            dungeon_mines = loaded["mines"]
-                            dungeon = loaded["grasses"]
-                            print(f"Loaded game from slot {slot_number}")
+            # בדוק אם זה מספר ולחשב את הזמן
+
         if state['state'] == game_consts.WIN_STATE:
             game_screen.fill((0, 0, 0))
             Screen.draw_win_message()
