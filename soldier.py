@@ -1,6 +1,5 @@
 import pygame
 import game_consts
-
 from game_consts import *
 from main import *
 
