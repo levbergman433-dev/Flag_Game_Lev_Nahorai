@@ -76,12 +76,7 @@ def main():
                     slot_number = NUMBER_KEYS[event.key]
                     # Short press (one second or less) = Save
                     if duration_sec <= 1.0:
-                        database.save_game_state(
-                            key=slot_number,
-                            soldier_pos=(player_r, player_c),
-                            mines=dungeon_mines,
-                            grasses=dungeon
-                        )
+                        database.save_game_state(slot_number,player_r, player_c,dungeon_mines,dungeon)
                         print(f"Saved game to slot {slot_number}")
                     # Long press (more than one second) = Charging
                     else:

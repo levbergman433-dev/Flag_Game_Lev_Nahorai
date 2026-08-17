@@ -47,8 +47,9 @@ def load_game_state(key):
     # שולפים את הנתונים מהשורה שנמצאה
     row = match.iloc[0]
     return {
-        "soldier_pos": eval(str(row["soldier_pos"])),
-        "mines": eval(str(row["mines"])),
-        "grasses": eval(str(row["grasses"])),
+        "soldier_pos": (str(row["soldier_pos"])),
+        "mines": (str(row["mines"])),
+        "grasses": (str(row["grasses"])),
         "is_flag_reached": bool(row["is_flag_reached"]),
     }
+# eval == שתפקידה לקחת מחרוזת של טקסט ולהריץ אותה כקוד לכל דבר
