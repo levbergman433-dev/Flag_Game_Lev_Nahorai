@@ -1,5 +1,7 @@
 import game_consts
+import teleport
 from game_consts import *
+from teleport import *
 
 
 
@@ -15,7 +17,8 @@ def generate_random_dungeon_mines(rows, cols):
 
     count_mine = 0
     mines_to_add = 3
-
+    count_pit = 0
+    pit_to_add = 3
     # run your random generation logic safely by modifying grid[r][c]
     for r in range(rows):
         count_per_row = 0
@@ -30,7 +33,6 @@ def generate_random_dungeon_mines(rows, cols):
                 iswall = False
                 if rand_val >= 99 and rand_val <= 100:
                     iswall = True
-
                 if iswall and count_mine >= 20:
                     iswall = False
                 if count_per_row >= 3:
@@ -50,8 +52,33 @@ def generate_random_dungeon_mines(rows, cols):
                             grid[r][c + i] = game_consts.TILE_MINE
                     c = c + mines_to_add
                 else:
-                    grid[r][c] = game_consts.TILE_EMPTY
-                    c += 1
+                    rand_val = random.randint(5, 100)
+                    ispit = False
+                    if rand_val >= 99 and rand_val <= 100:
+                        iswall = True
+                    if ispit and count_mine >= 20:
+                        ispit = False
+                    if count_per_row >= 3:
+                        ispit = False
+                    if ispit and c >= cols - 4:
+                        ispit = False
+                    if ispit == True:
+                        for i in range(mines_to_add):
+                            if c + i < cols - 1:
+                                if grid[r - 1][c + i] == game_consts.TILE_MINE:
+                                    ispit = False
+                    if ispit:
+                        count_pit += 1
+                        count_per_row += 1
+                        teleport.pit_location.append((r, c))
+                        for i in range(pit_to_add):
+                            if c + i < cols - 1:
+                                grid[r][c + i] = game_consts.TILE_PIT
+                        c = c + pit_to_add
+
+                    else:
+                        grid[r][c] = game_consts.TILE_EMPTY
+                        c += 1
 
     # clear player spawn area
     for pr in range(1, 1 + game_consts.PLAYER_ROWS):
@@ -65,6 +92,9 @@ def generate_random_dungeon_mines(rows, cols):
             grid[r][c] = game_consts.TILE_DIAMOND
 
     return grid
+
+
+
 
 def generate_random_dungeon_grass(rows, cols):
     grid = []

@@ -7,7 +7,9 @@ from game_consts import *
 import Screen
 import game_field
 import soldier
+import teleport
 import database
+
 # Buffer storage dictionary for keys 1-9
 key_press_times = {}
 # Keys for the corresponding figures
@@ -22,6 +24,7 @@ NUMBER_KEYS = {
     pygame.K_8: 8,
     pygame.K_9: 9,
 }
+
 # לפני שהמשחק מתחיל לרוץ, מכינים את הלוח:
 def main():
     start_bool = True
@@ -33,6 +36,7 @@ def main():
     while state['state'] == game_consts.RUNNING_STATE:
         game_screen.fill(COLOR_PANEL)
         Screen.draw_grass(dungeon)
+     #   Screen.draw_pit(dungeon_pit)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 state['state'] = game_consts.LOST_STATE
@@ -41,6 +45,7 @@ def main():
                 # לבדוק אם נלחץ מקש
                 if event.key in NUMBER_KEYS:
                     key_press_times[event.key] = pygame.time.get_ticks()
+
                 # כיוון תנועה לפי החצים במקלדת (dr = שינוי שורה, dc = שינוי עמודה).
                 dr, dc = 0, 0
                 if event.key == pygame.K_UP:
@@ -56,9 +61,12 @@ def main():
                     game_screen.fill(COLOR_PANEL)
                     Screen.draw_grid_lines(dungeon)
                     Screen.draw_mines(dungeon_mines)
+                    Screen.draw_pit(dungeon_mines)
                     Screen.draw_night_player(player_c, player_r)
                     pygame.display.flip()
                     pygame.time.wait(1000)
+
+
                 # אם החייל עלה על מוקש, הסטטוס משתנה ל-LOST_STATE, מוצגת הודעת הפסד ל-3 שניות והמשחק מסתיים.
                 if dr != 0 or dc != 0:
                     player_r, player_c, new_state = soldier.move_player(dungeon_mines, player_r, player_c, dr, dc)
@@ -76,8 +84,7 @@ def main():
                     slot_number = NUMBER_KEYS[event.key]
                     # short press (1 second or less) = save
                     if duration_sec <= 1.0:
-                        database.save_game_state(slot_number, (player_r, player_c), dungeon_mines, dungeon
-                        )
+                        database.save_game_state(slot_number, (player_r, player_c), dungeon_mines, dungeon)
                         print(f"Saved game to slot {slot_number}")
                     # long press (more than 1 second) = load
                     else:
@@ -87,6 +94,10 @@ def main():
                             dungeon_mines = loaded["mines"]
                             dungeon = loaded["grasses"]
                             print(f"Loaded game from slot {slot_number}")
+        if state['state'] == game_consts.TELEPORT_STATE:
+            player_r = teleport.pit_location()[0]
+            player_c = teleport.pit_location()[1]
+
         if state['state'] == game_consts.WIN_STATE:
             game_screen.fill((0, 0, 0))
             Screen.draw_win_message()

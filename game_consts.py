@@ -37,6 +37,7 @@ TILE_EMPTY = 0
 TILE_GRASS = 1
 TILE_DIAMOND = 2
 TILE_MINE = 3
+TILE_PIT = 4
 
 # running states
 RUNNING_STATE = 0
@@ -44,6 +45,7 @@ state = {}
 HINT_STATE = 1
 LOST_STATE = 2
 WIN_STATE = 3
+TELEPORT_STATE = 4
 
 
 # database consts

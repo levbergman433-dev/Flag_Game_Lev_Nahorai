@@ -3,7 +3,7 @@ import ast
 import pandas as pd
 import game_consts
 FILE_NAME = "game_database.csv"
-COLUMNS = ["key", "soldier_pos", "mines", "grasses", "is_flag_reached"]
+COLUMNS = ["key", "soldier_pos", "mines", "grasses", "is_flag_reached","pit"]
 # להחזיר את טבלת השמירות המעודכנת ישירות לזיכרון של התוכנית.
 def load_db():
     if not os.path.exists(FILE_NAME):
@@ -13,7 +13,7 @@ def load_db():
     return pd.read_csv(FILE_NAME)
 
 # לשמור את נתוני המשחק הנוכחי בסלוט המבוקש (ולמחוק שמירה קודמת באותו סלוט אם הייתה).
-def save_game_state(key, soldier_pos, mines, grasses, is_flag_reached=False):
+def save_game_state(key, soldier_pos, mines, grasses,pit, is_flag_reached=False):
     saves_table = load_db()
     k = key
 

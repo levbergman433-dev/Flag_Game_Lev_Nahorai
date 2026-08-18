@@ -1,4 +1,3 @@
-
 import pygame
 import game_consts
 from game_consts import *
@@ -29,6 +28,19 @@ def draw_mines(dungeon):
                 rect_x = (c + 1) * game_consts.CELL_SIZE
                 rect_y = r * game_consts.CELL_SIZE
                 draw_image('mine', rect_x, rect_y, 3 * game_consts.CELL_SIZE, 1 * game_consts.CELL_SIZE)
+                c += 3
+            else:
+                c += 1
+def draw_pit(dungeon):
+    # draw pit
+    for r2 in range(game_consts.GRID_ROWS):
+        c = 0
+        while c < game_consts.GRID_COLS:
+            tile_type = dungeon[r2][c]
+            if tile_type == game_consts.TILE_PIT:
+                rect_x = (c + 1) * game_consts.CELL_SIZE
+                rect_y = r2 * game_consts.CELL_SIZE
+                draw_image('pit', rect_x, rect_y, 3 * game_consts.CELL_SIZE, 2 * game_consts.CELL_SIZE)
                 c += 3
             else:
                 c += 1
@@ -123,3 +135,26 @@ def draw_message(message, font_size, color, location):
     font = pygame.font.SysFont("Arial", font_size)
     text_img = font.render(message, True, color)
     game_consts.game_screen.blit(text_img, location)
+
+
+
+
+
+
+
+
+"""              
+def draw_pit(dungeon):
+    # draw grass
+    for r in range(game_consts.GRID_ROWS):
+        c = 0
+        while c < game_consts.GRID_COLS:
+            tile_type = dungeon[r][c]
+            if tile_type == game_consts.TILE_PIT:
+                rect_x = (c + 1) * game_consts.CELL_SIZE
+                rect_y = r * game_consts.CELL_SIZE
+                draw_image('pit', rect_x, rect_y, 3 * game_consts.CELL_SIZE, 2 * game_consts.CELL_SIZE)
+                c += 3
+            else:
+                c += 1
+                """
