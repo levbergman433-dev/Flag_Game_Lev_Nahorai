@@ -17,7 +17,7 @@ def move_player(grid, player_r, player_c, dr, dc):
             grid_len = len(grid)
             grid_0_len = len(grid[0])
             # out of bounds check or hitting a wall
-            if check_r >= len(grid) or check_c >= len(grid[0]):
+            if check_r >= len(grid) or check_c >= len(grid[0]) - 1:
                 return player_r, player_c, new_state
             if check_r < 0 or check_c < 0:
                 return player_r, player_c, new_state

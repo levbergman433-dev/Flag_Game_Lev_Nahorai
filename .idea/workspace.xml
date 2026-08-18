@@ -5,8 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eab528c0-e292-42be-9b7e-0c298c6e49a8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/cyber_attack_n_defence/score_client.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cyber_attack_n_defence/score_server.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cyber_attack_tools/attack.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cyber_defence_tools/anti_cheat.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cyber_defence_tools/crypto_utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cyber_defence_tools/secure_db.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main_test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/soldier.py" beforeDir="false" afterPath="$PROJECT_DIR$/soldier.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,61 +51,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.8164586562801184" />
-      <entry key="MS500" value="3.4619568366404616" />
-      <entry key="S2" value="6.310679541460079" />
-      <entry key="S5" value="10.681099203896515" />
-      <entry key="S10" value="16.077156121969793" />
-      <entry key="S30" value="25.651843193588725" />
-      <entry key="S60" value="30.556555514664332" />
-      <entry key="M2" value="33.86284876732008" />
-      <entry key="M5" value="36.22883176202938" />
-      <entry key="M10" value="37.101488083173116" />
-      <entry key="M15" value="37.5133663748963" />
-      <entry key="M30" value="40.31097061816734" />
-      <entry key="H1" value="57.91953505891714" />
-      <entry key="H2" value="119.84759403425798" />
-      <entry key="H4" value="248.50891957891494" />
-      <entry key="D1" value="809.3312134576762" />
-      <entry key="W1" value="1109.4167034168925" />
+      <entry key="MS100" value="1.6091039306813002" />
+      <entry key="MS500" value="4.185735935682166" />
+      <entry key="S2" value="9.218381291900574" />
+      <entry key="S5" value="14.368342431110317" />
+      <entry key="S10" value="17.52267706242035" />
+      <entry key="S30" value="20.32533971704754" />
+      <entry key="S60" value="21.137215409991082" />
+      <entry key="M2" value="21.562021999515046" />
+      <entry key="M5" value="21.823266413809385" />
+      <entry key="M10" value="21.963922626066566" />
+      <entry key="M15" value="22.451147702708088" />
+      <entry key="M30" value="27.62801972584485" />
+      <entry key="H1" value="48.34250811092373" />
+      <entry key="H2" value="105.66309329761428" />
+      <entry key="H4" value="230.4261193361234" />
+      <entry key="D1" value="955.4452980978489" />
+      <entry key="W1" value="1451.506143085611" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
       <entry key="MS500" value="0.0" />
       <entry key="S2" value="0.0" />
       <entry key="S5" value="0.0" />
-      <entry key="S10" value="4.0678825E-316" />
-      <entry key="S30" value="7.409509586929161E-106" />
-      <entry key="S60" value="2.722043872882578E-53" />
-      <entry key="M2" value="5.222253982075055E-27" />
-      <entry key="M5" value="3.262829716492764E-11" />
-      <entry key="M10" value="7.259755445239776E-6" />
-      <entry key="M15" value="5.102248840574246E-4" />
-      <entry key="M30" value="0.04683924941238463" />
-      <entry key="H1" value="0.624907711489321" />
-      <entry key="H2" value="3.0657905346980403" />
-      <entry key="H4" value="8.06124431360119" />
-      <entry key="D1" value="24.433721586689106" />
-      <entry key="W1" value="31.541148508934757" />
+      <entry key="S10" value="0.0" />
+      <entry key="S30" value="4.0417656360329024E-130" />
+      <entry key="S60" value="2.0104142946250944E-65" />
+      <entry key="M2" value="4.483764372293875E-33" />
+      <entry key="M5" value="1.1498962545720958E-13" />
+      <entry key="M10" value="3.39746633972002E-7" />
+      <entry key="M15" value="4.941260398720601E-5" />
+      <entry key="M30" value="0.008125215684468612" />
+      <entry key="H1" value="0.13774481300573213" />
+      <entry key="H2" value="0.7894976898914621" />
+      <entry key="H4" value="3.139073367439949" />
+      <entry key="D1" value="21.941398405163167" />
+      <entry key="W1" value="34.227831545396455" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.764719852425311" />
-      <entry key="MS500" value="3.4106653391162594" />
-      <entry key="S2" value="6.288741758703716" />
-      <entry key="S5" value="10.669243315490574" />
-      <entry key="S10" value="16.069233637241076" />
-      <entry key="S30" value="25.64764150200095" />
-      <entry key="S60" value="30.553942274422276" />
-      <entry key="M2" value="33.861352081436294" />
-      <entry key="M5" value="36.22817586164853" />
-      <entry key="M10" value="37.101155547786476" />
-      <entry key="M15" value="37.51362782222197" />
-      <entry key="M30" value="40.35729179697123" />
-      <entry key="H1" value="58.542360412651064" />
-      <entry key="H2" value="122.90871694247362" />
-      <entry key="H4" value="256.56407267951874" />
-      <entry key="D1" value="833.7617033749643" />
-      <entry key="W1" value="1140.9572426105583" />
+      <entry key="MS100" value="1.5556366040035583" />
+      <entry key="MS500" value="4.1557738414878935" />
+      <entry key="S2" value="9.197925714600293" />
+      <entry key="S5" value="14.354175179988324" />
+      <entry key="S10" value="17.513798065253027" />
+      <entry key="S30" value="20.321858158272903" />
+      <entry key="S60" value="21.135399867912287" />
+      <entry key="M2" value="21.561094740341417" />
+      <entry key="M5" value="21.822890725133437" />
+      <entry key="M10" value="21.96373332101272" />
+      <entry key="M15" value="22.45106268103572" />
+      <entry key="M30" value="27.635952377772362" />
+      <entry key="H1" value="48.47956866381483" />
+      <entry key="H2" value="106.45109658157304" />
+      <entry key="H4" value="233.56259604580612" />
+      <entry key="D1" value="977.3837633468343" />
+      <entry key="W1" value="1485.7333105806613" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -106,6 +113,9 @@
   &quot;fromUser&quot;: false
 }</component>
   <component name="ProjectId" id="3HnxD2PG2TjEfZbeBH0CJ8M7vvf" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -115,8 +125,10 @@
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Python.consts.executor": "Run",
+    "Python.crypto_utils.executor": "Run",
     "Python.database.executor": "Run",
     "Python.main.executor": "Run",
+    "Python.main_test.executor": "Run",
     "Python.soldier.executor": "Debug",
     "Python.text.executor": "Run",
     "RunOnceActivity.MCP Project settings loaded": "true",
@@ -145,6 +157,10 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\tvmai\PycharmProjects\TheFlagGame\Images" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\tvmai\PycharmProjects\TheFlagGame\cyber_attack_tools" />
+      <recent name="C:\Users\tvmai\PycharmProjects\TheFlagGame\cyber_defence_tools" />
     </key>
   </component>
   <component name="RunManager">
@@ -290,7 +306,8 @@
       <workItem from="1786565912698" duration="20887000" />
       <workItem from="1786949454491" duration="111000" />
       <workItem from="1786949599321" duration="409000" />
-      <workItem from="1786950030779" duration="13597000" />
+      <workItem from="1786950030779" duration="16392000" />
+      <workItem from="1787033112525" duration="19560000" />
     </task>
     <servers />
   </component>
@@ -319,8 +336,10 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/TheFlagGame$text.coverage" NAME="text Coverage Results" MODIFIED="1786603317867" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/TheFlagGame$consts.coverage" NAME="consts Coverage Results" MODIFIED="1786604788442" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/day_2$main.coverage" NAME="main Coverage Results" MODIFIED="1786967152814" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/day_2$crypto_utils.coverage" NAME="crypto_utils Coverage Results" MODIFIED="1787052424467" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cyber_defence_tools" />
+    <SUITE FILE_PATH="coverage/day_2$main.coverage" NAME="main Coverage Results" MODIFIED="1787033821476" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/TheFlagGame$soldier.coverage" NAME="soldier Coverage Results" MODIFIED="1786609100599" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/day_2$main_test.coverage" NAME="main_test Coverage Results" MODIFIED="1787034899594" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/TheFlagGame$main.coverage" NAME="main Coverage Results" MODIFIED="1786617968293" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
